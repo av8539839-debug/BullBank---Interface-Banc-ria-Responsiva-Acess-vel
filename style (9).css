@@ -1,0 +1,149 @@
+body {
+    font-size: 15pt;
+    background-image: url('/befunky_2026-2-6_13-14-29.jpg'); 
+    background-size: cover;              /* Cobre todo o espaço */
+    background-repeat: no-repeat;       /* Não repete a imagem */
+    background-position: center;        /* Centraliza a imagem */
+    height: 100vh;                      /* Altura total da tela */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centraliza na horizontal (esquerda/direita) */
+    align-items: center;     /* Centraliza na vertical (cima/baixo) */
+    min-height: 100vh;       /* Garante que o corpo tenha a altura da tela toda */
+    background-color: #1b5e40; /* O verde do seu banco */
+    flex-direction: column;  /* Coloca um item embaixo do outro (Logo e depois o Card) */
+}
+
+.logo-banco i {
+    color: #39FF14; /* O verde neon do seu design */
+    margin-right: 10px; /* Dá um espaço entre o trevo e o texto */
+    filter: drop-shadow(0 0 5px rgba(57, 255, 20, 0.5)); /* Faz o trevo brilhar! */
+}
+.container {
+    background: rgba(255, 255, 255, 0.1); /* Um leve brilho transparente */
+    backdrop-filter: blur(10px);          /* Efeito de vidro para ver o fundo */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5)
+}
+
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 15px; /* Garante que o input não encoste no botão de baixo */
+    padding: 15px;       /* Deixa a caixa de digitar mais alta e confortável */
+    border-radius: 15px; /* Define o arredondamento */
+    padding: 10px 15px; /* Espaçamento interno */
+    
+
+}
+button {
+    background-color: #39FF14;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+h2 {
+    color: #FFFFFF; /* Branco puro para máxima leitura */
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para destacar do fundo */
+}
+
+/* Ou se quiser usar o seu Verde Limão para combinar com o botão: */
+label{
+    color: #E0F2E9; 
+    font-weight: bold;
+    text-transform: uppercase; /* Deixa mais imponente */
+    margin-bottom: 12px; /* Dá espaço entre o texto 'NÚMERO DA CONTA' e a caixa branca */
+    font-size: 25px;
+    
+}
+button:hover {
+    background-color: #32cd32; /* Um verde um pouco diferente */
+    box-shadow: 0 0 15px #39FF14; /* Brilho neon */
+    transform: scale(1.05); /* Aumenta levemente */
+}
+#mensagem{
+padding-top: 20px; /* Garante que a mensagem não grude no botão */
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%; /* Ocupa 90% da largura da tela do celular */
+        padding: 20px; /* Reduz o espaçamento interno para sobrar mais espaço */
+    }
+
+    body {
+        font-size: 14pt; /* Diminui um pouco a letra para caber melhor */
+    }
+
+    input, button {
+        padding: 10px; /* Deixa os botões um pouco menores no celular */
+    }
+}
+.logo-banco {
+        font-size: 2.5rem; /* Deixa o logo maior em telas grandes */
+    }
+    body {
+    background-attachment: fixed; /* Mantém o fundo parado enquanto rola */
+    background-size: cover;
+}
+/* --- ESTILOS DO LOADER --- */
+
+/* Container que ocupa a tela toda */
+#loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Fundo preto para destacar o neon */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Garante que fique por cima de tudo */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Efeito de sumir suavemente */
+}
+
+/* O círculo giratório */
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.1); /* Borda clarinha de fundo */
+    border-top: 4px solid #00ff00; /* A parte neon que gira (use o seu verde!) */
+    border-radius: 50%;
+    width: 30px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Chama a animação de girar */
+    box-shadow: 0 0 15px #00ff00; /* Efeito de brilho neon */
+}
+
+/* Texto abaixo do loader */
+.loader-text {
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* Animação de rotação */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Classe para esconder o loader via JS */
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}

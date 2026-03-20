@@ -1,0 +1,47 @@
+function fazerLogin() {
+    // 1. Corrigi o "usuário" para "usuario" (sem acento, igual ao HTML)
+    const inputconta = document.getElementById("usuario");
+    const mensagem = document.getElementById("mensagem");
+
+    // 2. Adicionei o ".value" para pegar o texto digitado
+    switch (inputconta.value) {
+        case '123':
+            mensagem.textContent = "acesso aceito Welcome Ana Vitória";
+            mensagem.style.color = "#E0F2E9";
+            break;
+
+        case '180':
+            mensagem.textContent = "Welcome adm";
+            mensagem.style.color = "#E0F2E9";
+            break;
+
+        default:
+            mensagem.textContent = "senha errada possível invasão";
+            mensagem.style.color = "white"; // mudei para branco para ler melhor no fundo vermelho
+            
+    }
+}
+const hora = new Date().getHours();
+
+if (hora < 12) {
+    mensagem.textContent ="Bom dia! Bem-vinda ao BullBank";
+} else if (hora < 18) {
+    mensagem.textContent = "Boa tarde! Como podemos ajudar?";
+} else {
+    mensagem.textContent ="Boa noite! Operações noturnas liberadas.";
+}
+/* --- SCRIPT DE CARREGAMENTO --- */
+
+// Espera todo o conteúdo da página (HTML, CSS, Imagens) carregar
+window.addEventListener('load', function() {
+    
+    // Seleciona o container do loader
+    const loaderContainer = document.getElementById('loader-container');
+    
+    // Adiciona um atraso simulado de 2 segundos (2000 milissegundos)
+    // para dar a sensação de processamento bancário.
+    setTimeout(function() {
+        // Adiciona a classe CSS que faz o loader sumir suavemente
+        loaderContainer.classList.add('loader-hidden');
+    }, 2000); 
+});
